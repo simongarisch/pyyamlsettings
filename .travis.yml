@@ -1,0 +1,24 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.6"
+  
+install:
+  - pip install -U pip
+  - python setup.py install # install your package
+  - pip install coveralls
+  
+  # also install requirements .txt
+  - pip install -r requirements.txt
+  
+script:
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      py.test;
+    else
+      pytest;
+    fi
+  - coverage run -m pytest
+
+after_success:
+  - coveralls
