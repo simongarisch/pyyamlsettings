@@ -4,24 +4,22 @@ Test that our descriptors are operating correctly
 import pytest
 from yamlsettings import descriptors, errors
 
-class TestDescriptors():
+class TestDescriptors(object):
     ''' There is only the one descriptor to test: YamlFilePath '''
     yaml_file_path = descriptors.YamlFilePath()
 
-    def test_default_is_none(self):
-        ''' the default value should be none '''
-        result = self.yaml_file_path.__get__("no_instance")
-        assert result is None
-
     def test_must_be_string(self):
         ''' the path passed must be of the type string '''
-        pass
+        with pytest.raises(errors.YamlFilePathTypeError):
+            self.yaml_file_path = 42
 
     def test_must_be_yaml(self):
         ''' the file path must end with '.yaml' '''
-        pass
+        with pytest.raises(errors.NotAYamlFileError):
+            self.yaml_file_path = "doesnt_end_with_yaml.txt"
 
     def test_file_must_exist(self):
         ''' the file path must point to an existing file '''
-        pass
+        with pytest.raises(errors.YamlFileMustExistError):
+            self.yaml_file_path = "file_doesnt_exist.yaml"
         

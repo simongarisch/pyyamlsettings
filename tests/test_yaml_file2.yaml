@@ -1,0 +1,13 @@
+
+att2: 84
+att1: "This is another string"
+
+level1:
+    a: 2
+    b: 4
+    level2:
+        a: 6
+        b: 8
+        level3:
+            a: 10
+            b: 12
