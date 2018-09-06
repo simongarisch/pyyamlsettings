@@ -52,7 +52,7 @@ class TestYamlSettings(object):
         assert self.settingsObj.get_data("att2") == "This is a string"
         assert self.settingsObj.get_data("level1", "a") == 1
         assert self.settingsObj.get_data("level1", "b") == 2
-        assert self.settingsObj.get_data("level2", "a") == 3
-        assert self.settingsObj.get_data("level2", "b") == 4
-        assert self.settingsObj.get_data("level3", "a") == 5
-        assert self.settingsObj.get_data("level3", "b") == 6
+        assert self.settingsObj.get_data("level1", "level2", "a") == 3
+        assert self.settingsObj.get_data("level1", "level2", "b") == 4
+        assert self.settingsObj.get_data("level1", "level2", "level3", "a") == 5
+        assert self.settingsObj.get_data("level1", "level2", "level3", "b") == 6
