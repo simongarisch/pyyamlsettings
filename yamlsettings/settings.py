@@ -32,12 +32,12 @@ class YamlSettings(object):
             data = yaml.load(yaml_file)
         return data
 
-    def get_attribute(self, attribute):
-        ''' exposed method that allows the user to get a specific yaml attribute '''
-        if attribute not in self._settings_dict:
-            raise errors.AttributeDoesntExistError
-        return copy.copy(self._settings_dict[attribute])
-
-    def get_all_attributes(self):
-        ''' exposed method that returns a dict with attributes as keys '''
-        return copy.copy(self._settings_dict)
+    def get_data(self, *args):
+        ''' exposed method that allows the user to get
+            specific yaml attribute/s '''
+        data_dict = self._settings_dict
+        for arg in args:
+            if arg not in data_dict:
+                raise errors.AttributeDoesntExistError
+            data_dict = data_dict[arg]
+        return copy.copy(data_dict)

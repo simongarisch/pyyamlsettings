@@ -1,6 +1,6 @@
 
-att2: 42
-att1: "This is a string"
+att1: 42
+att2: "This is a string"
 
 level1:
     a: 1

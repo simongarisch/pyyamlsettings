@@ -15,6 +15,7 @@ class TestYamlSettings(object):
         dir_path = self.dir_path = os.path.dirname(os.path.abspath(__file__))
         self.yaml_file1_path = os.path.join(dir_path, "test_yaml_file1.yaml")
         self.yaml_file2_path = os.path.join(dir_path, "test_yaml_file2.yaml")
+        self.settingsObj = YamlSettings(self.yaml_file1_path)
     
     def teardown_method(self, method):
         ''' and delete them at the end of each run '''
@@ -30,3 +31,28 @@ class TestYamlSettings(object):
         obj2B = YamlSettings(self.yaml_file2_path)
         assert id(obj1A) == id(obj1B)
         assert id(obj2A) == id(obj2B)
+
+    def test_file_read(self):
+        ''' test that the settings file has been read correctly
+            and we have data in a dictionary
+        '''
+        assert isinstance(self.settingsObj._settings_dict, dict)
+
+    def test_settings_query_no_args(self):
+        ''' test the querying of our yaml data with no args (returns all) '''
+        result = self.settingsObj.get_data() # should return the entire dict
+        assert result == self.settingsObj._settings_dict
+
+    def test_settings_query_with_args(self):
+        ''' we should be able to select attributes with the get_data method '''
+        with pytest.raises(errors.AttributeDoesntExistError):
+            self.settingsObj.get_data("not_an_attribute")
+
+        assert self.settingsObj.get_data("att1") == 42
+        assert self.settingsObj.get_data("att2") == "This is a string"
+        assert self.settingsObj.get_data("level1", "a") == 1
+        assert self.settingsObj.get_data("level1", "b") == 2
+        assert self.settingsObj.get_data("level2", "a") == 3
+        assert self.settingsObj.get_data("level2", "b") == 4
+        assert self.settingsObj.get_data("level3", "a") == 5
+        assert self.settingsObj.get_data("level3", "b") == 6
