@@ -13,7 +13,7 @@ class YamlFilePath(object):
         -> point to a file that exists
         -> end with the file extension '.yaml'
     '''
-    def __init__(self, default=""):
+    def __init__(self, default=None):
         self.default = default
         self.data = WeakKeyDictionary()
 
