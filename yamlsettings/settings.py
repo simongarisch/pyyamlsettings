@@ -17,7 +17,7 @@ class YamlSettings(object):
         ''' new handles object creation and init handles object initialization '''
         instance = cls.instances.get(yaml_file_path, None)
         if not instance:
-            instance = super(YamlSettings, cls).__new__(cls, yaml_file_path)
+            instance = super(YamlSettings, cls).__new__(cls)
             cls.instances[yaml_file_path] = instance
         return instance
 

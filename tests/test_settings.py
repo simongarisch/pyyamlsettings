@@ -56,3 +56,17 @@ class TestYamlSettings(object):
         assert self.settingsObj.get_data("level1", "level2", "b") == 4
         assert self.settingsObj.get_data("level1", "level2", "level3", "a") == 5
         assert self.settingsObj.get_data("level1", "level2", "level3", "b") == 6
+
+    def test_settings_wrong_query(self):
+        ''' check that querying the wrong keys / parameters throws an error '''
+        with pytest.raises(errors.AttributeDoesntExistError):
+            # should be a level2 between 1 and 3
+            self.settingsObj.get_data("level1", "level3", "a")
+
+        with pytest.raises(errors.AttributeDoesntExistError):
+            # missed specifying level1 first
+            self.settingsObj.get_data("level2", "a")
+
+        with pytest.raises(errors.AttributeDoesntExistError):
+            # an attribute at level2 that doesnt exist
+            self.settingsObj.get_data("level1", "level2", "not_an_attribute")
