@@ -1,8 +1,8 @@
 '''
 Create a YamlSettings class that holds settings in a dictionary for a given yaml file.
 '''
-import yaml
 import copy
+import yaml
 from . import descriptors
 from . import errors
 
@@ -12,7 +12,7 @@ class YamlSettings(object):
         implemented using the Flyweight Pattern '''
     instances = {}
     yaml_file_path = descriptors.YamlFilePath()
-    
+
     def __new__(cls, yaml_file_path):
         ''' new handles object creation and init handles object initialization '''
         instance = cls.instances.get(yaml_file_path, None)
