@@ -26,7 +26,7 @@ level1:
         b: 4
 ```
 
-We can load this file
+We can load this file:
 ```python
 import os
 import yamlsettings
