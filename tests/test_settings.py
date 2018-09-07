@@ -3,11 +3,11 @@ Here we test several aspects of our YamlSettings class
 '''
 import os
 import pytest
-from yamlsettings import YamlSettings, errors
+from pyyamlsettings import YamlSettings, errors
 
 
 class TestYamlSettings(object):
-    ''' this class should read / query yaml files and only create 
+    ''' this class should read / query yaml files and only create
         one instance per file read '''
 
     def setup_method(self, method):

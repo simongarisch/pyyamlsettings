@@ -2,7 +2,7 @@
 test that all of the errors are getting raised correctly
 '''
 import pytest
-from yamlsettings import errors
+from pyyamlsettings import errors
 
 
 def test_errors():

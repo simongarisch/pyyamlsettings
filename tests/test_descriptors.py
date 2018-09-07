@@ -2,7 +2,7 @@
 Test that our descriptors are operating correctly
 '''
 import pytest
-from yamlsettings import descriptors, errors
+from pyyamlsettings import descriptors, errors
 
 class TestDescriptors(object):
     ''' There is only the one descriptor to test: YamlFilePath '''

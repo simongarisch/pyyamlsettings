@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name="yamlsettings",
+setup(name="pyyamlsettings",
       version="0.0.1",
       install_requires=[
           "PyYAML>=3.13"
@@ -10,6 +10,6 @@ setup(name="yamlsettings",
 
       author="Simon Garisch",
       author_email="gatman946@gmail.com",
-      url="https://github.com/simongarisch/yamlsettings",
+      url="https://github.com/simongarisch/pyyamlsettings",
       packages=find_packages()
      )
