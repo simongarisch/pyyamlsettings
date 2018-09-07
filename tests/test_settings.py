@@ -16,7 +16,7 @@ class TestYamlSettings(object):
         self.yaml_file1_path = os.path.join(dir_path, "test_yaml_file1.yaml")
         self.yaml_file2_path = os.path.join(dir_path, "test_yaml_file2.yaml")
         self.settingsObj = YamlSettings(self.yaml_file1_path)
-    
+
     def teardown_method(self, method):
         ''' and delete them at the end of each run '''
         del self.dir_path
@@ -70,3 +70,11 @@ class TestYamlSettings(object):
         with pytest.raises(errors.AttributeDoesntExistError):
             # an attribute at level2 that doesnt exist
             self.settingsObj.get_data("level1", "level2", "not_an_attribute")
+
+    def test_settings_not_dict(self):
+        ''' when we drill down to a value in a yaml file (say and int of float)
+            the user might think there's a dictionary at this location.
+            attempts to get key / value pairs in this scenario must throw and error
+        '''
+        with pytest.raises(errors.AttributeDoesntExistError):
+            self.settingsObj.get_data("att1", "level1")

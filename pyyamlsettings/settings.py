@@ -37,6 +37,8 @@ class YamlSettings(object):
             specific yaml attribute/s '''
         data_dict = self._settings_dict
         for arg in args:
+            if not isinstance(data_dict, dict):
+                raise errors.AttributeDoesntExistError
             if arg not in data_dict:
                 raise errors.AttributeDoesntExistError
             data_dict = data_dict[arg]
