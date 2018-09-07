@@ -1,14 +1,14 @@
 [![Build Status](https://travis-ci.org/simongarisch/yamlsettings.svg?branch=master)](https://travis-ci.org/simongarisch/yamlsettings)
 [![Coverage Status](https://coveralls.io/repos/github/simongarisch/yamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/yamlsettings?branch=master)
 
-# yamlsettings
+# pyyamlsettings
 
 A Flyweight pattern for loading yaml files in Python.
 
 ## Installation
-yamlsettings is python 2 and 3 compatible.
+pyyamlsettings is python 2 and 3 compatible.
 ```bash
-pip install yamlsettings
+pip install pyyamlsettings
 ```
 
 ## Overview
@@ -29,10 +29,10 @@ level1:
 We can load this file:
 ```python
 import os
-import yamlsettings
+import pyyamlsettings
 
 yaml_file_path = os.path.join("tests", "test_yaml_file.yaml")
-settings = yamlsettings.YamlSettings(yaml_file_path)
+settings = pyyamlsettings.YamlSettings(yaml_file_path)
 ```
 
 And read particular items with:
