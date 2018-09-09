@@ -19,7 +19,7 @@ script:
     else
       pytest;
     fi
-  - coverage run --source=yamlsettings -m pytest
+  - coverage run --source=pyyamlsettings -m pytest
 
 after_success:
   - coveralls
