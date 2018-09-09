@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/simongarisch/yamlsettings.svg?branch=master)](https://travis-ci.org/simongarisch/yamlsettings)
-[![Coverage Status](https://coveralls.io/repos/github/simongarisch/yamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/yamlsettings?branch=master)
+[![Build Status](https://travis-ci.org/simongarisch/pyyamlsettings.svg?branch=master)](https://travis-ci.org/simongarisch/pyyamlsettings)
+[![Coverage Status](https://coveralls.io/repos/github/simongarisch/pyyamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/pyyamlsettings?branch=master)
 [![PyPI version](https://badge.fury.io/py/pyyamlsettings.svg)](https://badge.fury.io/py/pyyamlsettings)
 
 # pyyamlsettings
