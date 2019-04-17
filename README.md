@@ -44,3 +44,19 @@ print(result) # 42
 result = settings.get_data("level1", "level2", "b")
 print(result) # 4
 ```
+
+## Notes
+Due to a [deprecation message](https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation) yaml.load was modified slightly.
+```python
+yaml.load(input, Loader=yaml.FullLoader)
+```
+
+Users may have [issues installing PyYAML](https://stackoverflow.com/questions/49911550/how-to-upgrade-disutils-package-pyyaml) as a dependency with the error message:
+```bash
+Cannot uninstall 'PyYAML'. It is a distutils installed project and ...
+```
+
+One way around this is to run:
+```bash
+pip install --ignore-installed PyYAML
+```
