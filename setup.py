@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name="pyyamlsettings",
-      version="0.0.3",
+      version="0.0.4",
       install_requires=[
           "PyYAML>=5.1"
         ],

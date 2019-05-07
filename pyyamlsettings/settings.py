@@ -33,6 +33,10 @@ class YamlSettings(object):
             data = yaml.load(yaml_file, Loader=yaml.FullLoader)
         return data
 
+    def get(self, *args):
+        ''' get seems like a better choice than get_data, but support both '''
+        return self.get_data(*args)
+
     def get_data(self, *args):
         ''' exposed method that allows the user to get
             specific yaml attribute/s '''

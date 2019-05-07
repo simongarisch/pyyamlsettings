@@ -40,13 +40,13 @@ class TestYamlSettings(object):
 
     def test_settings_query_no_args(self):
         ''' test the querying of our yaml data with no args (returns all) '''
-        result = self.settingsObj.get_data() # should return the entire dict
+        result = self.settingsObj.get() # should return the entire dict
         assert result == self.settingsObj._settings_dict
 
     def test_settings_query_with_args(self):
         ''' we should be able to select attributes with the get_data method '''
         with pytest.raises(errors.AttributeDoesntExistError):
-            self.settingsObj.get_data("not_an_attribute")
+            self.settingsObj.get("not_an_attribute")
 
         assert self.settingsObj.get_data("att1") == 42
         assert self.settingsObj.get_data("att2") == "This is a string"
