@@ -1,5 +1,6 @@
 [![Build Status](https://dev.azure.com/gatman946/simongarisch/_apis/build/status/simongarisch.pyyamlsettings?branchName=master)](https://dev.azure.com/gatman946/simongarisch/_build/latest?definitionId=1&branchName=master)
 [![Build Status](https://travis-ci.org/simongarisch/pyyamlsettings.svg?branch=master)](https://travis-ci.org/simongarisch/pyyamlsettings)
+<a href="https://github.com/python/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg">
 [![Coverage Status](https://coveralls.io/repos/github/simongarisch/pyyamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/pyyamlsettings?branch=master)
 [![PyPI version](https://badge.fury.io/py/pyyamlsettings.svg)](https://badge.fury.io/py/pyyamlsettings)
 
@@ -39,10 +40,10 @@ settings = pyyamlsettings.YamlSettings(yaml_file_path)
 
 And read particular items with:
 ```python
-result = settings.get_data("att1")
+result = settings.get("att1")
 print(result) # 42
 
-result = settings.get_data("level1", "level2", "b")
+result = settings.get("level1", "level2", "b")
 print(result) # 4
 ```
 
