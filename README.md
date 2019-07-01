@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/gatman946/simongarisch/_apis/build/status/simongarisch.pyyamlsettings?branchName=master)](https://dev.azure.com/gatman946/simongarisch/_build/latest?definitionId=1&branchName=master)
 [![Build Status](https://travis-ci.org/simongarisch/pyyamlsettings.svg?branch=master)](https://travis-ci.org/simongarisch/pyyamlsettings)
 [![Coverage Status](https://coveralls.io/repos/github/simongarisch/pyyamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/pyyamlsettings?branch=master)
 [![PyPI version](https://badge.fury.io/py/pyyamlsettings.svg)](https://badge.fury.io/py/pyyamlsettings)
