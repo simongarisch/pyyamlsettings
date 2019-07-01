@@ -1,1 +1,6 @@
-PyYAML>=5.1
+appdirs==1.4.3
+attrs==19.1.0
+black==19.3b0
+Click==7.0
+PyYAML==5.1.1
+toml==0.10.0
