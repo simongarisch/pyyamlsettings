@@ -1,6 +1,6 @@
-'''
+"""
 Defines descriptors for the yamlsettings package
-'''
+"""
 
 import os
 from weakref import WeakKeyDictionary
@@ -8,11 +8,12 @@ from . import errors
 
 
 class YamlFilePath(object):
-    ''' A descriptor defining a yaml file path. These must:
+    """ A descriptor defining a yaml file path. These must:
         -> be of the type str
         -> point to a file that exists
         -> end with the file extension '.yaml'
-    '''
+    """
+
     def __init__(self, default=None):
         self.default = default
         self.data = WeakKeyDictionary()
