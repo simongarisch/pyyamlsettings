@@ -30,7 +30,6 @@ class YamlSettings(object):
     def _yaml_loader(self, yaml_file_path):
         """ internal method to load yaml files and return the contents as a dict """
         with open(yaml_file_path, "r") as yaml_file:
-            # https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation
             data = yaml.load(yaml_file, Loader=yaml.FullLoader)
         return data
 
