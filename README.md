@@ -3,6 +3,7 @@
 <a href="https://github.com/python/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg">
 [![Coverage Status](https://coveralls.io/repos/github/simongarisch/pyyamlsettings/badge.svg?branch=master)](https://coveralls.io/github/simongarisch/pyyamlsettings?branch=master)
 [![PyPI version](https://badge.fury.io/py/pyyamlsettings.svg)](https://badge.fury.io/py/pyyamlsettings)
+[![BCH compliance](https://bettercodehub.com/edge/badge/simongarisch/pyyamlsettings?branch=master)](https://bettercodehub.com/)
 
 # pyyamlsettings
 
